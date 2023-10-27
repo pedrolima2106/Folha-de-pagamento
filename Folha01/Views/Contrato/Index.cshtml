@@ -1,0 +1,126 @@
+﻿
+<style>
+
+    .contract-text, .contract-form {
+        background-color: #443c4f;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 100%;
+        max-width: 800px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+    }
+
+        .contract-text p {
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .contract-text strong {
+            font-weight: bold;
+        }
+
+        .contract-form label {
+            display: block;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .contract-form input, .contract-form select, .contract-form textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #554e63;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            box-sizing: border-box;
+            color: #fff;
+            background-color: #3d3649;
+        }
+
+        .contract-form textarea {
+            height: 100px;
+        }
+
+        .contract-form button {
+            background-color: #001eff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+            .contract-form button:hover {
+                background-color: #45a049;
+            }
+
+    .container {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        width: 200%;
+    }
+</style>
+<div class="container">
+    <div class="contract-text">
+        <h2>Contrato de Trabalho</h2>
+        <p>Entre as partes:</p>
+        <p><strong>EMPRESA:</strong> [ㅤㅤㅤㅤㅤㅤ], com sede na [ㅤㅤㅤㅤㅤㅤ], inscrita no CNPJ sob o nº [ㅤㅤㅤㅤㅤ], doravante denominada EMPREGADORA;</p>
+        <p><strong>EMPREGADO(A):</strong> [ㅤㅤㅤㅤㅤㅤ], portador(a) da carteira de trabalho nº [ㅤㅤㅤㅤ], série [ㅤㅤㅤㅤ], CPF nº [ㅤㅤㅤㅤ], residente na [ㅤㅤㅤㅤ], doravante denominado(a) EMPREGADO(A).</p>
+        <p>1. A EMPREGADORA contrata o EMPREGADO(A) para o cargo de [ㅤㅤㅤ], mediante as seguintes condições:</p>
+        <p>2. O início da prestação de serviços está previsto para o dia [ㅤㅤㅤㅤ].</p>
+        <p>3. O contrato terá duração determinada, com término previsto para o dia [ㅤㅤㅤㅤ].</p>
+        <p>4. O salário acordado será de R$ [ㅤㅤㅤ].</p>
+        <p>5. O EMPREGADO(A) se compromete a desempenhar suas funções com zelo, dedicação e responsabilidade.</p>
+        <p>6. Fica estabelecido o endereço da prestação de serviços na [ㅤㅤㅤㅤㅤ].</p>
+        <p>7. O EMPREGADO(A) declara possuir habilitação para a função de [ㅤㅤㅤ].</p>
+        <p>8. O presente contrato é celebrado por prazo determinado, não caracterizando vínculo empregatício de caráter definitivo.</p>
+
+    </div>
+
+    <div class="contract-form">
+        <h2>Dados do Funcionário</h2>
+        <form>
+            <label for="nome">Nome do Funcionário:</label>
+            <input type="text" id="nome" name="nome" required><br>
+
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" name="idade" required><br>
+
+            <label for="cargo">Cargo:</label>
+            <input type="text" id="cargo" name="cargo" required><br>
+
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco" required><br>
+
+            <label for="habilitacao">Habilitação:</label>
+            <input type="text" id="habilitacao" name="habilitacao" required><br>
+
+            <label for="estadoCivil">Estado Civil:</label>
+            <select id="estadoCivil" name="estadoCivil" required>
+                <option value="solteiro">Solteiro(a)</option>
+                <option value="casado">Casado(a)</option>
+                <option value="divorciado">Divorciado(a)</option>
+                <option value="viuvo">Viúvo(a)</option>
+            </select><br>
+
+            <label for="salario">Salário:</label>
+            <input type="text" id="salario" name="salario" required><br>
+
+            <label for="dataInicio">Data de Início:</label>
+            <input type="date" id="dataInicio" name="dataInicio" required><br>
+
+            <label for "dataFim">Data de Término:</label>
+            <input type="date" id="dataFim" name="dataFim" required><br>
+
+            <label for="descricao">Descrição:</label>
+            <textarea id="descricao" name="descricao" required></textarea><br>
+
+            <button type="submit">Emitir Contrato</button>
+        </form>
+    </div>
+
+</div>
+

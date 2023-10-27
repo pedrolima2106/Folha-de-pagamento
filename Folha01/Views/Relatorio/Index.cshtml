@@ -1,0 +1,104 @@
+﻿
+<style>
+    .report-form {
+        background-color: #443c4f;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        max-width: 600px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+        .report-form label {
+            display: block;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .report-form input, .report-form select, .report-form textarea {
+            width: calc(100% - 12px);
+            padding: 8px;
+            border: 1px solid #554e63;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #3d3649;
+        }
+
+        .report-form textarea {
+            height: 100px;
+        }
+
+        .report-form button {
+            background-color: #001eff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+            .report-form button:hover {
+                background-color: #45a049;
+            }
+
+    .custom-category {
+        display: none;
+    }
+
+    .container {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        width: 200%;
+    }
+</style>
+
+<div class="container">
+<div class="report-form">
+    <h2>Emissão de Relatório</h2>
+    <form>
+        <label for="title">Título do Relatório:</label>
+        <input type="text" id="title" name="title" required><br>
+
+        <label for="category">Categoria:</label>
+        <select id="category" name="category" required>
+            <option value="Categoria">Categoria</option>
+            <option value="compras">Compras</option>
+            <option value="vendas">Vendas</option>
+            <option value="producao">Produção</option>
+            <option value="T.I">T.I</option>
+            <option value="RH">RH</option>
+            <option value="Financeiro">Financeiro</option>
+            <option value="outro">Outro</option>
+        </select><br>
+
+        <div class="custom-category">
+            <label for="customCategory">Escolha a categoria:</label>
+            <input type="text" id="customCategory" name="customCategory">
+        </div>
+
+        <label for="description">Descrição:</label>
+        <textarea id="description" name="description" required></textarea><br>
+
+        <button type="submit">Emitir Relatório</button>
+    </form>
+</div>
+
+<div class="report-list">
+    <h2>Relatórios Emitidos</h2>
+
+</div>
+</div>
+<script>
+    document.getElementById('category').addEventListener('change', function () {
+        var customCategory = document.querySelector('.custom-category');
+        if (this.value == 'outro') {
+            customCategory.style.display = 'block';
+        } else {
+            customCategory.style.display = 'none';
+        }
+    });
+</script>
