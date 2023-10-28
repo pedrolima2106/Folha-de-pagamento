@@ -13,5 +13,10 @@ namespace Folha01.Controllers
         {
             return View();
         }
+
+        public IActionResult Detalhes()
+        {
+            return View();
+        }
     }
 }

@@ -2,9 +2,14 @@
 
 namespace Folha01.Controllers
 {
-    public class OperadorController : Controller
+    public class HoleriteController : Controller
     {
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Holerite()
         {
             return View();
         }
