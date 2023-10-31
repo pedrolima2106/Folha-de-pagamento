@@ -11,6 +11,6 @@ namespace Folha01.Data
         
         }
 
-        public DbSet<ListaModel> Lista { get; set; }
+        public DbSet<CadastroFModel> Lista { get; set; }
     }
 }
