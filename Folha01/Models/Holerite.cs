@@ -1,12 +1,53 @@
-﻿namespace Folha01.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using System.Xml.Linq;
+
+namespace Folha01.Models
 {
+    [Table("Holerite")]
     public class Holerite
     {
+        [Column("IDHolerite")]
+        [Display(Name = "IDHolerite")]
+        [Key]
+        public int IDHolerite { get; set; }
+
+        [Column("IdFuncionario")]
+        [Display(Name = "IdFuncionario")]
+        public int IdFuncionario { get; set; }
+
+        [Column("IdContrato")]
+        [Display(Name = "Codigo Contrato")]
+        public int Contrato { get; set; }
+
+        [Column("IdBeneficios")]
+        [Display(Name = "IdBeneficios")]
+        public int IdBeneficios { get; set; }
+
+        [Column("IdFrequencia")]
+        [Display(Name = "IdFrequencia")]
+        public int IdFrequencia { get; set; }
+
+        [Column("Data_Atual")]
+        [Display(Name = "Data Atual")]
+        public DateTime DataAtual { get; set; }
+
+        [Column("Data_Admissao")]
+        [Display(Name = "Data de Admissao")]
+        public DateTime DataAdmissao { get; set; }
+
+        [Column("SalarioBase")]
+        [Display(Name = "Salario Base")]
+        public double SalarioBase { get; set; }
+
+        [Column("SalarioLiquido")]
+        [Display(Name = "Salario Liquido")]
+        public double SalarioLiquido { get; set; }
     }
 }
 
 /*Create table [Holerites](
-[ID Holerite] int not null primary key,
+[IDHolerite] int not null primary key,
 [ID_Funcionario] int not null,
 [Codigo_Contrato] int not null,
 [ID_Beneficios] int not null,

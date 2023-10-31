@@ -1,7 +1,30 @@
-﻿namespace Folha01.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Folha01.Models
 {
+
+    [Table("Frequencia")]
     public class Frequencia
     {
+        [Column("IdFrequencia")]
+        [Display(Name = "IdFrequencia")]
+        [Key]
+        public int IdFrequencia { get; set; }
+
+        [Column("Data")]
+        [Display(Name = "Data")]
+        public double Data { get; set; }
+
+        [Column("Faltas")]
+        [Display(Name = "Faltas")]
+        public int Faltas { get; set; }
+
+        [Column("IdFuncionario")]
+        [Display(Name = "IdFuncionario")]
+        public int IdFuncionario { get; set; }
+
+
     }
 }
 

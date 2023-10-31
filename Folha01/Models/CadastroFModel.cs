@@ -10,10 +10,25 @@ namespace Folha01.Models
         [Display(Name = "IdFuncionario")]
         [Key]
         public int IdFuncionario  { get; set; }
+
+        [Column("NomeFuncionario")]
+        [Display(Name = "Nome do Funcionario")]
         public string NomeFuncionario { get; set; }
+
+        [Column("Cpf")]
+        [Display(Name = "Cpf")]
         public double Cpf { get; set; }
+
+        [Column("Cep")]
+        [Display(Name = "Cep")]
         public double Cep { get; set; }
+
+        [Column("DatadeNascimento")]
+        [Display(Name = "Data de Nascimento")]
         public string DatadeNascimento { get; set; }
+
+        [Column("Gmail")]
+        [Display(Name = "Gmail")]
         public string Gmail { get; set; }
     }
 }

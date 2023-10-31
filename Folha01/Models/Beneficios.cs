@@ -1,7 +1,36 @@
-﻿namespace Folha01.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Folha01.Models
 {
+    [Table("Beneficios")]
     public class Beneficios
     {
+        [Column("IdBeneficios ")]
+        [Display(Name = "IdBeneficios")]
+        [Key]
+        public int IdBeneficios { get; set; }
+
+        [Column("Recisaofuncionario")]
+        [Display(Name = "Recisão do funcionario")]
+        public string Recisaofuncionario { get; set; }
+
+        [Column("HorasExtras")]
+        [Display(Name = "Horas Extras")]
+        public string HorasExtras { get; set; }
+
+        [Column("VA")]
+        [Display(Name = "VA")]
+        public double Va { get; set; }
+
+        [Column("VT")]
+        [Display(Name = "VT")]
+        public double Vt { get; set; }
+
+        [Column("IdFuncionario")]
+        [Display(Name = "IdFuncionario")]
+        public int IdFuncionario { get; set; }
+
     }
 }
 
