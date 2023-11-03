@@ -5,7 +5,7 @@ namespace Folha01.Models
 {
 
     [Table("Contratos")]
-    public class Contrato
+    public class ContratoModel
     {
         [Column("IdContrato")]
         [Display(Name = "Codigo do Contrto")]

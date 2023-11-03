@@ -5,7 +5,7 @@ namespace Folha01.Models
 {
 
     [Table("Frequencia")]
-    public class Frequencia
+    public class FrequenciaModel
     {
         [Column("IdFrequencia")]
         [Display(Name = "IdFrequencia")]

@@ -5,7 +5,7 @@ using System.Xml.Linq;
 namespace Folha01.Models
 {
     [Table("Holerite")]
-    public class Holerite
+    public class HoleriteModel
     {
         [Column("IDHolerite")]
         [Display(Name = "IDHolerite")]

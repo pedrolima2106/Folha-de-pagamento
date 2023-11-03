@@ -6,7 +6,7 @@ namespace Folha01.Models
 {
 
     [Table("Funcionario Cargo")]
-    public class Cargo
+    public class CargoModel
     {
 
         [Column("IdCadastro")]

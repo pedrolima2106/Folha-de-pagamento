@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Folha01.Models
 {
     [Table("Beneficios")]
-    public class Beneficios
+    public class BeneficiosModel
     {
         [Column("IdBeneficios ")]
         [Display(Name = "IdBeneficios")]
