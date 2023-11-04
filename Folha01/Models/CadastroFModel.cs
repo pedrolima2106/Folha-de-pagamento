@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Folha01.Enums;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Folha01.Models
@@ -15,6 +16,19 @@ namespace Folha01.Models
         [Display(Name = "Nome do Funcionario")]
         public string NomeFuncionario { get; set; }
 
+        [Column("LoginFuncionario")]
+        [Display(Name = "Login do Funcionario")]
+        public string LoginFuncionario { get; set; }
+
+        [Column("SenhaFuncionario")]
+        [Display(Name = "Senha do Funcionario")]
+        public string SenhaFuncionario { get; set; }
+        public PerfilEnum Perfil { get; set; }
+
+        [Column("Email")]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+
         [Column("Cpf")]
         [Display(Name = "Cpf")]
         public double Cpf { get; set; }
@@ -25,11 +39,9 @@ namespace Folha01.Models
 
         [Column("DatadeNascimento")]
         [Display(Name = "Data de Nascimento")]
-        public string DatadeNascimento { get; set; }
+        public DateTime DatadeNascimento { get; set; }
 
-        [Column("Gmail")]
-        [Display(Name = "Gmail")]
-        public string? Gmail { get; set; }
+       
     }
 }
 

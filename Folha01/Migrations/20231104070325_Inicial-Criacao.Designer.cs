@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Folha01.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20231103021547_Inicial-Criacao")]
+    [Migration("20231104070325_Inicial-Criacao")]
     partial class InicialCriacao
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -77,20 +77,32 @@ namespace Folha01.Migrations
                         .HasColumnType("float")
                         .HasColumnName("Cpf");
 
-                    b.Property<string>("DatadeNascimento")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
+                    b.Property<DateTime>("DatadeNascimento")
+                        .HasColumnType("datetime2")
                         .HasColumnName("DatadeNascimento");
 
-                    b.Property<string>("Gmail")
+                    b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Gmail");
+                        .HasColumnName("Email");
+
+                    b.Property<string>("LoginFuncionario")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("LoginFuncionario");
 
                     b.Property<string>("NomeFuncionario")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("NomeFuncionario");
+
+                    b.Property<int>("Perfil")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SenhaFuncionario")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("SenhaFuncionario");
 
                     b.HasKey("IdFuncionario");
 

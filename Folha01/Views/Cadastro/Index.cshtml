@@ -1,73 +1,77 @@
-﻿<style>
+﻿@model IEnumerable<Folha01.Models.CadastroFModel>
 
-    .container {
-        background-color: #443c4f;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        max-width: 400px;
-        width: 100%;
+@{
+
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    .light-text {
+        color: #ffffff; 
     }
 
+
     h1 {
-        color: #fff;
         text-align: center;
     }
 
-    form {
-        display: grid;
-        gap: 10px;
-    }
+    
 
-    label, input {
-        width: 100%;
-    }
 
-        input[type="text"],
-        input[type="email"],
-        input[type="date"] {
-            background-color: #3d3649;
-            color: #fff;
-            border: 1px solid #554e63;
-            padding: 8px;
-            border-radius: 4px;
-        }
-
-        input[type="submit"] {
-            background-color: #001eff;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-            input[type="submit"]:hover {
-                background-color: #45a049;
-            }
 </style>
-<div class="container">
-    <h1>Cadastro de Funcionário</h1>
-    <form>
-        <label for="id">Id Funcionário:</label>
-        <input type="text" id="id" name="id"><br>
 
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name "nome"><br>
+<h1 class="light-text">Página Inicial</h1>
 
-        <label for="cpf">CPF:</label>
-        <input type="text" id="cpf" name="cpf"><br>
+<p>
+    <a asp-action="Create" class="btn btn-primary" role="button" >Criar Novo Cadastro</a>
+</p>
 
-        <label for="cep">CEP:</label>
-        <input type="text" id="cep" name="cep"><br>
-
-        <label for="nascimento">Data de Nascimento:</label>
-        <input type="date" id="nascimento" name="nascimento"><br>
-
-        <label for="email">Gmail:</label>
-        <input type="email" id="email" name="email"><br>
-
-        <input type="submit" value="Enviar">
-    </form>
-</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th class="light-text">
+                @Html.DisplayNameFor(model => model.NomeFuncionario)
+            </th>
+            <th class="light-text">
+                @Html.DisplayNameFor(model => model.Cpf)
+            </th>
+            <th class="light-text">
+                @Html.DisplayNameFor(model => model.Cep)
+            </th>
+            <th class="light-text">
+                @Html.DisplayNameFor(model => model.DatadeNascimento)
+            </th>
+            <th class="light-text">
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        { 
+                <tr>
+                    <td class="light-text">
+                    @Html.DisplayFor(modelItem => item.NomeFuncionario)
+                    </td>
+                    <td class="light-text">
+                    @Html.DisplayFor(modelItem => item.Cpf)
+                    </td>
+                    <td class="light-text">
+                    @Html.DisplayFor(modelItem => item.Cep)
+                    </td>
+                    <td class="light-text">
+                    @Html.DisplayFor(modelItem => item.DatadeNascimento)
+                    </td>
+                    <td class="light-text">
+                    @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.IdFuncionario" class="light-text">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.IdFuncionario" class="light-text">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.IdFuncionario" class="light-text">Delete</a>
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>

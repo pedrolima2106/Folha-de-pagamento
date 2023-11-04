@@ -22,8 +22,8 @@ namespace Folha01.Controllers
         // GET: Cadastro1
         public async Task<IActionResult> Index()
         {
-              return _context.Lista != null ? 
-                          View(await _context.Lista.ToListAsync()) :
+            return _context.Lista != null ?
+                        View(await _context.Lista.ToListAsync()) :
                           Problem("Entity set 'Context.Lista'  is null.");
         }
 

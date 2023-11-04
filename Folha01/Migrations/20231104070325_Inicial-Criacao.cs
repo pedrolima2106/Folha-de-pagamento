@@ -60,10 +60,13 @@ namespace Folha01.Migrations
                     IdFuncionario = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     NomeFuncionario = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    LoginFuncionario = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SenhaFuncionario = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Perfil = table.Column<int>(type: "int", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Cpf = table.Column<double>(type: "float", nullable: false),
                     Cep = table.Column<double>(type: "float", nullable: false),
-                    DatadeNascimento = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Gmail = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    DatadeNascimento = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
