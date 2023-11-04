@@ -5,67 +5,68 @@
 }
 
 <style>
-
-   
-    h1 {
-        color: #fff;
-        text-align: center;
+    .light-text {
+        color: #ffffff; 
     }
 
- 
+
+    h1 {
+        text-align: center;
+    }
 </style>
 
-
-<h1>Pagina Incial</h1>
+<h1 class="light-text">Página Inicial</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="light-text">Criar Novo Cadastro</a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
-            <th>
+            <th class="light-text">
                 @Html.DisplayNameFor(model => model.NomeFuncionario)
             </th>
-            <th>
+            <th class="light-text">
                 @Html.DisplayNameFor(model => model.Cpf)
             </th>
-            <th>
+            <th class="light-text">
                 @Html.DisplayNameFor(model => model.Cep)
             </th>
-            <th>
+            <th class="light-text">
                 @Html.DisplayNameFor(model => model.DatadeNascimento)
             </th>
-            <th>
+            <th class="light-text">
                 @Html.DisplayNameFor(model => model.Gmail)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomeFuncionario)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cpf)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cep)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DatadeNascimento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Gmail)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdFuncionario">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdFuncionario">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdFuncionario">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        { 
+            <tr>
+                <td class="light">
+                    @Html.DisplayFor(modelItem => item.NomeFuncionario)
+                </td>
+                <td class="light">
+                    @Html.DisplayFor(modelItem => item.Cpf)
+                </td>
+                <td class "light">
+                    @Html.DisplayFor(modelItem => item.Cep)
+                </td>
+                <td class="light">
+                    @Html.DisplayFor(modelItem => item.DatadeNascimento)
+                </td>
+                <td class="light">
+                    @Html.DisplayFor(modelItem => item.Gmail)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdFuncionario" class="light-text">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.IdFuncionario" class="light-text">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdFuncionario" class="light-text">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

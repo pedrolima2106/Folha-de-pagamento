@@ -29,7 +29,7 @@ namespace Folha01.Models
 
         [Column("Gmail")]
         [Display(Name = "Gmail")]
-        public string Gmail { get; set; }
+        public string? Gmail { get; set; }
     }
 }
 

@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<Context>
-    (options => options.UseSqlServer("Data Source=SKARLET\\SKARLETSERVER;Initial Catalog=Folha_de_Pagamento;Integrated Security=True"));// colocar a strings de conexão do banco de dados aqui
+    (options => options.UseSqlServer("Data Source=NICHOLAS\\NICHOLASBANCO;Initial Catalog=master;Persist Security Info=True;User ID=sa;Password=1404039217nbea"));// colocar a strings de conexão do banco de dados aqui
 
 var app = builder.Build();
 
