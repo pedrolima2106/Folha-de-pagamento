@@ -27,7 +27,7 @@ namespace Folha01.Models
 
         [Column("Email")]
         [Display(Name = "Email")]
-        public string Email { get; set; }
+        public string? Email { get; set; }
 
         [Column("Cpf")]
         [Display(Name = "Cpf")]
