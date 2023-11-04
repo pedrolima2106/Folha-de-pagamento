@@ -1,0 +1,137 @@
+﻿@model LoginModel
+@{
+    Layout = "_Layout Login";
+    ViewData["Title"] = "Login";
+}
+
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" aria-label="Close">X</button>
+        @TempData["MensagemErro"]
+    </div>
+}
+
+<style>
+
+    .main-login {
+        width: 100vw;
+        height: 100vh;
+        background: #201b2c;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .left-login {
+        width: 50vh;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+        .left-login > h1 {
+            color: #77ffc0
+        }
+
+    .right-login {
+        width: 50vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-login {
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 30px 35px;
+        background: #2f2841;
+        border-radius: 20px;
+        box-shadow: 0px 10px 40px #00000056;
+    }
+
+        .card-login > h1 {
+            color: #00ff88;
+            font-weight: 800;
+            margin: 0px;
+        }
+
+    .textfield {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        margin: 10px 0px;
+    }
+
+        .textfield > input {
+            width: 100%;
+            border: none;
+            border-radius: 10px;
+            padding: 15px;
+            background: #514869;
+            color: #f0ffffde;
+            font-size: 12pt;
+            box-shadow: 0px 10px 40px #00000056;
+            box-sizing: border-box;
+            margin: 9px;
+        }
+
+        .textfield > label {
+            color: #f0ffffde;
+            margin-bottom: 10px;
+        }
+
+        .textfield > input::placeholder {
+            color: #f0ffff94;
+        }
+
+    .btn-login {
+        width: 100%;
+        padding: 16px 0px;
+        margin: 9px;
+        border: none;
+        border-radius: 8px;
+        outline: none;
+        text-transform: uppercase;
+        font-weight: 800;
+        letter-spacing: 3px;
+        color: #2b134b;
+        background: #00ff88;
+        cursor: pointer;
+        box-shadow: 0px 10px 40px -12px #00ff8052;
+        align-items: center;
+    }
+  
+</style>
+
+<form asp-controller="Login" asp-action="Entrar" method="post">
+    
+    <div class="main-login">
+        <div class="left-login">
+            <h1>Faça login<br>E veja seu assorcio</h1>
+        </div>
+        <div class="right-login">
+            <div class="card-login">
+                <h1>LOGIN</h1>
+                <div class="textfield">
+                    <label for="usuario">Usuário</label>
+                    <input type="text" asp-for="login" placeholder="Usuário" id="usuario"/>
+                    @Html.ValidationMessageFor( x => x.login)
+                </div>
+                <div class="textfield">
+                    <label for="senha">Senha</label>
+                    <input type="password" asp-for="senha" placeholder="Senha" id="senha" />
+                    @Html.ValidationMessageFor( x => x.senha)
+                </div>
+                <button type="submit" class="btn-login">Login</button>
+            </div>
+        </div>
+</form>
