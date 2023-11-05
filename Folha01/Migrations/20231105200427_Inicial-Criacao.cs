@@ -63,7 +63,7 @@ namespace Folha01.Migrations
                     LoginFuncionario = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     SenhaFuncionario = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Perfil = table.Column<int>(type: "int", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Cpf = table.Column<double>(type: "float", nullable: false),
                     Cep = table.Column<double>(type: "float", nullable: false),
                     DatadeNascimento = table.Column<DateTime>(type: "datetime2", nullable: false)
@@ -105,6 +105,20 @@ namespace Folha01.Migrations
                 {
                     table.PrimaryKey("PK_Holerite", x => x.IDHolerite);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "LoginF",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    login = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    senha = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_LoginF", x => x.Id);
+                });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -126,6 +140,9 @@ namespace Folha01.Migrations
 
             migrationBuilder.DropTable(
                 name: "Holerite");
+
+            migrationBuilder.DropTable(
+                name: "LoginF");
         }
     }
 }

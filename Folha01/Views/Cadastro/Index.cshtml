@@ -7,7 +7,7 @@
 
 <style>
     .light-text {
-        color: #ffffff; 
+        color: #ffffff;
     }
 
 
@@ -15,15 +15,12 @@
         text-align: center;
     }
 
-    
-
-
 </style>
 
 <h1 class="light-text">Página Inicial</h1>
 
 <p>
-    <a asp-action="Create" class="btn btn-primary" role="button" >Criar Novo Cadastro</a>
+    <a asp-action="Create" class="btn btn-primary" role="button">Criar Novo Cadastro</a>
 </p>
 
 <table class="table" id="table-f" style="color: purple">
@@ -49,29 +46,29 @@
     </thead>
     <tbody>
         @foreach (var item in Model)
-        { 
-                <tr>
-                    <td class="light-text">
+        {
+            <tr>
+                <td class="light-text">
                     @Html.DisplayFor(modelItem => item.NomeFuncionario)
-                    </td>
-                    <td class="light-text">
+                </td>
+                <td class="light-text">
                     @Html.DisplayFor(modelItem => item.Cpf)
-                    </td>
-                    <td class="light-text">
+                </td>
+                <td class="light-text">
                     @Html.DisplayFor(modelItem => item.Cep)
-                    </td>
-                    <td class="light-text">
+                </td>
+                <td class="light-text">
                     @Html.DisplayFor(modelItem => item.DatadeNascimento)
-                    </td>
-                    <td class="light-text">
+                </td>
+                <td class="light-text">
                     @Html.DisplayFor(modelItem => item.Email)
-                    </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.IdFuncionario" class="light-text">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.IdFuncionario" class="light-text">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.IdFuncionario" class="light-text">Delete</a>
-                    </td>
-                </tr>
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdFuncionario" class="light-text">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.IdFuncionario" class="light-text">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdFuncionario" class="light-text">Delete</a>
+                </td>
+            </tr>
         }
     </tbody>
 </table>

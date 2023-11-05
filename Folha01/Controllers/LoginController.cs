@@ -1,11 +1,20 @@
 ﻿using Folha01.Models;
+using Folha01.Repositorio;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Policy;
+using System;
 
 namespace Folha01.Controllers
 {
     public class LoginController : Controller
     {
+        private readonly IUsuarioRepositorio _usuarioRepositorio;
+
+        public LoginController(IUsuarioRepositorio usuarioRepositorio) 
+        {
+            _usuarioRepositorio = usuarioRepositorio;
+        
+        }
        
         public IActionResult Index()
         {
@@ -13,15 +22,21 @@ namespace Folha01.Controllers
         }
 
         [HttpPost]
-        public IActionResult Entrar(LoginModel loginModel )
+        public IActionResult Entrar(CadastroFModel loginModel )
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    if(loginModel.login == "adm" && loginModel.senha == "123")
+                   CadastroFModel usuario = _usuarioRepositorio.BuscarPorLogin(loginModel.LoginFuncionario);
+
+                    if(usuario != null)
                     {
-                        return RedirectToAction("Index","Home");
+                        if (usuario.SenhaValida(loginModel.SenhaFuncionario))
+                        {
+                            return RedirectToAction("Index", "Home");
+                        }
+                        TempData["MensagemErro"] = $"Senha Invalida:";
                     }
                     TempData["MensagemErro"] = $"Usuario ou Senha Invalidos:";
                 }
@@ -29,9 +44,9 @@ namespace Folha01.Controllers
                 return View("Index");
 
             }
-            catch (Exception erro) 
+            catch (Exception) 
             {
-                TempData["MensagemErro"] = $"Não foi possivel Realizar o Login: {erro.Message}";
+                TempData["MensagemErro"] = $"Não foi possivel Realizar o Login";
                 return RedirectToAction("Index");
 
             }

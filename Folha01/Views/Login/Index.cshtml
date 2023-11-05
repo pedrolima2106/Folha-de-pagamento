@@ -1,4 +1,4 @@
-﻿@model LoginModel
+﻿@model CadastroFModel
 @{
     Layout = "_Layout Login";
     ViewData["Title"] = "Login";
@@ -123,15 +123,16 @@
                 <h1>LOGIN</h1>
                 <div class="textfield">
                     <label for="usuario">Usuário</label>
-                    <input type="text" asp-for="login" placeholder="Usuário" id="usuario"/>
-                    @Html.ValidationMessageFor( x => x.login)
+                    <input type="text" asp-for="LoginFuncionario" placeholder="Usuário" id="usuario"/>
+                    @Html.ValidationMessageFor( x => x.LoginFuncionario)
                 </div>
                 <div class="textfield">
                     <label for="senha">Senha</label>
-                    <input type="password" asp-for="senha" placeholder="Senha" id="senha" />
-                    @Html.ValidationMessageFor( x => x.senha)
+                    <input type="password" asp-for="SenhaFuncionario" placeholder="Senha" id="senha" />
+                    @Html.ValidationMessageFor( x => x.SenhaFuncionario)
                 </div>
                 <button type="submit" class="btn-login">Login</button>
             </div>
         </div>
+    </div>
 </form>

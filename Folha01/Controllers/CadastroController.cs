@@ -19,7 +19,7 @@ namespace Folha01.Controllers
             _context = context;
         }
 
-        // GET: CadastroFModels
+        // GET: CadastroFuncionario
         public async Task<IActionResult> Index()
         {
               return _context.Lista != null ? 
@@ -27,7 +27,7 @@ namespace Folha01.Controllers
                           Problem("Entity set 'Context.Lista'  is null.");
         }
 
-        // GET: CadastroFModels/Details/5
+        // GET: CadastroFuncionario/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Lista == null)
@@ -45,18 +45,18 @@ namespace Folha01.Controllers
             return View(cadastroFModel);
         }
 
-        // GET: CadastroFModels/Create
+        // GET: CadastroFuncionario/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: CadastroFModels/Create
+        // POST: CadastroFuncionario/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdFuncionario,NomeFuncionario,LoginFuncionario,SenhaFuncionario,Perfil,Gmail,Cpf,Cep,DatadeNascimento")] CadastroFModel cadastroFModel)
+        public async Task<IActionResult> Create([Bind("IdFuncionario,NomeFuncionario,LoginFuncionario,SenhaFuncionario,Perfil,Email,Cpf,Cep,DatadeNascimento")] CadastroFModel cadastroFModel)
         {
             if (ModelState.IsValid)
             {
@@ -67,7 +67,7 @@ namespace Folha01.Controllers
             return View(cadastroFModel);
         }
 
-        // GET: CadastroFModels/Edit/5
+        // GET: CadastroFuncionario/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Lista == null)
@@ -83,12 +83,12 @@ namespace Folha01.Controllers
             return View(cadastroFModel);
         }
 
-        // POST: CadastroFModels/Edit/5
+        // POST: CadastroFuncionario/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdFuncionario,NomeFuncionario,LoginFuncionario,SenhaFuncionario,Perfil,Gmail,Cpf,Cep,DatadeNascimento")] CadastroFModel cadastroFModel)
+        public async Task<IActionResult> Edit(int id, [Bind("IdFuncionario,NomeFuncionario,LoginFuncionario,SenhaFuncionario,Perfil,Email,Cpf,Cep,DatadeNascimento")] CadastroFModel cadastroFModel)
         {
             if (id != cadastroFModel.IdFuncionario)
             {
@@ -118,7 +118,7 @@ namespace Folha01.Controllers
             return View(cadastroFModel);
         }
 
-        // GET: CadastroFModels/Delete/5
+        // GET: CadastroFuncionario/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Lista == null)
@@ -136,7 +136,7 @@ namespace Folha01.Controllers
             return View(cadastroFModel);
         }
 
-        // POST: CadastroFModels/Delete/5
+        // POST: CadastroFuncionario/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

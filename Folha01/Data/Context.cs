@@ -12,10 +12,11 @@ namespace Folha01.Data
         }
 
         public DbSet<CadastroFModel> Lista { get; set; }
-        public DbSet<BeneficiosModel> Beneficios { get; set; }
-        public DbSet<CargoModel> CargoModels { get; set; }
-        public DbSet<ContratoModel> Cargos { get; set; }
-        public DbSet<FrequenciaModel> Frequenci { get;set; }
-        public DbSet<HoleriteModel> Holerite { get;set; }
+        public DbSet<BeneficiosModel> beneficios { get; set; }
+        public DbSet<CargoModel> cargo { get; set; }
+        public DbSet<ContratoModel> contrato { get; set; }
+        public DbSet<FrequenciaModel> frequencias { get; set; }
+        public DbSet<HoleriteModel> holerite { get; set; }
+        public DbSet<LoginModel> LoginF { get; set; }
     }
 }

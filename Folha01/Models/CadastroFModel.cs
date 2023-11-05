@@ -18,10 +18,12 @@ namespace Folha01.Models
 
         [Column("LoginFuncionario")]
         [Display(Name = "Login do Funcionario")]
+        [Required(ErrorMessage = "Digite o Login")]
         public string LoginFuncionario { get; set; }
 
         [Column("SenhaFuncionario")]
         [Display(Name = "Senha do Funcionario")]
+        [Required(ErrorMessage = "Digite a Senha")]
         public string SenhaFuncionario { get; set; }
         public PerfilEnum Perfil { get; set; }
 
@@ -41,7 +43,13 @@ namespace Folha01.Models
         [Display(Name = "Data de Nascimento")]
         public DateTime DatadeNascimento { get; set; }
 
-       
+        public bool SenhaValida(string senha)
+        {
+            return SenhaFuncionario == senha;
+        }
+
+     
+
     }
 }
 

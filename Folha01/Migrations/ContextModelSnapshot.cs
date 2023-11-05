@@ -80,7 +80,6 @@ namespace Folha01.Migrations
                         .HasColumnName("DatadeNascimento");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Email");
 
@@ -210,6 +209,27 @@ namespace Folha01.Migrations
                     b.HasKey("IDHolerite");
 
                     b.ToTable("Holerite");
+                });
+
+            modelBuilder.Entity("Folha01.Models.LoginModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("login")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("senha")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("LoginF");
                 });
 #pragma warning restore 612, 618
         }
