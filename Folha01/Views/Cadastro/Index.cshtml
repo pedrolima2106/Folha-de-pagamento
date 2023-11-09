@@ -1,45 +1,43 @@
 ﻿@model IEnumerable<Folha01.Models.CadastroFModel>
 
 @{
-
     ViewData["Title"] = "Index";
 }
 
 <style>
     .light-text {
-        color: #ffffff;
+        color: #ffffff; /* Define a cor do texto como branco */
     }
-
 
     h1 {
-        text-align: center;
+        text-align: center; /* Centraliza o título horizontalmente */
     }
-
 </style>
 
 <h1 class="light-text">Página Inicial</h1>
 
 <p>
-    <a asp-action="Create" class="btn btn-primary" role="button">Criar Novo Cadastro</a>
+    <a asp-action="Create" class="btn btn-primary" role="button">Criar Novo Cadastro</a> <!-- Botão para criar um novo cadastro -->
 </p>
 
 <table class="table" id="table-f" style="color: purple">
+    <!-- Tabela com estilo de cor roxa -->
     <thead>
         <tr>
             <th class="light-text">
-                @Html.DisplayNameFor(model => model.NomeFuncionario)
+                @Html.DisplayNameFor(model => model.NomeFuncionario) <!-- Nome da coluna Nome do Funcionário -->
             </th>
             <th class="light-text">
-                @Html.DisplayNameFor(model => model.Cpf)
+                @Html.DisplayNameFor(model => model.Cpf) <!-- Nome da coluna CPF -->
             </th>
             <th class="light-text">
-                @Html.DisplayNameFor(model => model.Cep)
+                @Html.DisplayNameFor(model => model.Cep) <!-- Nome da coluna CEP -->
             </th>
             <th class="light-text">
-                @Html.DisplayNameFor(model => model.DatadeNascimento)
+                @Html.DisplayNameFor(model => model.DatadeNascimento) <!-- Nome da coluna Data de Nascimento -->
             </th>
             <th class="light-text">
-                @Html.DisplayNameFor(model => model.Email)
+                @Html.DisplayNameFor(model => model.Email) <!-- Nome da coluna Email -->
             </th>
             <th></th>
         </tr>
@@ -49,24 +47,24 @@
         {
             <tr>
                 <td class="light-text">
-                    @Html.DisplayFor(modelItem => item.NomeFuncionario)
+                    @Html.DisplayFor(modelItem => item.NomeFuncionario) <!-- Exibe o Nome do Funcionário -->
                 </td>
                 <td class="light-text">
-                    @Html.DisplayFor(modelItem => item.Cpf)
+                    @Html.DisplayFor(modelItem => item.Cpf) <!-- Exibe o CPF -->
                 </td>
                 <td class="light-text">
-                    @Html.DisplayFor(modelItem => item.Cep)
+                    @Html.DisplayFor(modelItem => item.Cep) <!-- Exibe o CEP -->
+                </td>
+                <td class "light-text">
+                    @Html.DisplayFor(modelItem => item.DatadeNascimento) <!-- Exibe a Data de Nascimento -->
                 </td>
                 <td class="light-text">
-                    @Html.DisplayFor(modelItem => item.DatadeNascimento)
-                </td>
-                <td class="light-text">
-                    @Html.DisplayFor(modelItem => item.Email)
+                    @Html.DisplayFor(modelItem => item.Email) <!-- Exibe o Email -->
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.IdFuncionario" class="light-text">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.IdFuncionario" class="light-text">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.IdFuncionario" class="light-text">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.IdFuncionario" class="light-text">Edit</a> | <!-- Link para Editar o Cadastro -->
+                    <a asp-action="Details" asp-route-id="@item.IdFuncionario" class="light-text">Details</a> | <!-- Link para Detalhes do Cadastro -->
+                    <a asp-action="Delete" asp-route-id="@item.IdFuncionario" class="light-text">Delete</a> <!-- Link para Deletar o Cadastro -->
                 </td>
             </tr>
         }

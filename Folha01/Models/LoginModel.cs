@@ -5,13 +5,12 @@ namespace Folha01.Models
     public class LoginModel
     {
         [Key]
-        public int Id { get; set; }
+        public int Id { get; set; } // Chave primária para identificar o login
 
-        [Required(ErrorMessage = "Digite o Login")]
-        public string login { get; set; }
+        [Required(ErrorMessage = "Digite o Login")] // O campo de login é obrigatório
+        public string Login { get; set; }
 
-        [Required(ErrorMessage = "Digite a Senha")]
-        public string senha { get; set; }
-
+        [Required(ErrorMessage = "Digite a Senha")] // O campo de senha é obrigatório
+        public string Senha { get; set; }
     }
 }

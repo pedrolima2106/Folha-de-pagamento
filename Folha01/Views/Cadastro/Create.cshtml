@@ -38,51 +38,69 @@
         <div class="col-md-4">
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-warning"></div>
+                
+                <!-- Campo de Nome do Funcionário -->
                 <div class="form-group">
                     <label asp-for="NomeFuncionario" class="control-label"></label>
                     <input asp-for="NomeFuncionario" class="form-control" />
                     <span asp-validation-for="NomeFuncionario" class="text-warning"></span>
                 </div>
+                
+                <!-- Campo de Login do Funcionário -->
                 <div class="form-group">
-                    <label asp-for="LoginFuncionario" class="control-label"></label>
+                    <label asp-for="LoginFuncionario" class ="control-label"></label>
                     <input asp-for="LoginFuncionario" class="form-control" />
                     <span asp-validation-for="LoginFuncionario" class="text-warning"></span>
                 </div>
+                
+                <!-- Campo de Senha do Funcionário -->
                 <div class="form-group">
                     <label asp-for="SenhaFuncionario" class="control-label"></label>
                     <input asp-for="SenhaFuncionario" class="form-control" />
                     <span asp-validation-for="SenhaFuncionario" class="text-warning"></span>
                 </div>
+                
+                <!-- Campo de Perfil do Funcionário -->
                 <div class="form-group">
                     <label asp-for="Perfil" class="control-label"></label>
                     <select asp-for="Perfil" class="form-control"></select>
                     <span asp-validation-for="Perfil" class="text-warning"></span>
                 </div>
+                
+                <!-- Campo de Email do Funcionário -->
                 <div class="form-group">
                     <label asp-for="Email" class="control-label"></label>
                     <input asp-for="Email" class="form-control" />
                     <span asp-validation-for="Email" class="text-warning"></span>
                 </div>
+                
+                <!-- Campo de Cpf do Funcionário -->
                 <div class="form-group">
                     <label asp-for="Cpf" class="control-label"></label>
                     <input asp-for="Cpf" class="form-control" />
                     <span asp-validation-for="Cpf" class="text-warning"></span>
                 </div>
+                
+                <!-- Campo de Cep do Funcionário -->
                 <div class="form-group">
                     <label asp-for="Cep" class="control-label"></label>
                     <input asp-for="Cep" class="form-control" />
                     <span asp-validation-for="Cep" class="text-warning"></span>
                 </div>
+                
+                <!-- Campo de Data de Nascimento do Funcionário -->
                 <div class="form-group">
                     <label asp-for="DatadeNascimento" class="control-label"></label>
                     <input asp-for="DatadeNascimento" class="form-control" />
                     <span asp-validation-for="DatadeNascimento" class="text-warning"></span>
                 </div>
+                
                 <div class="text-center">
                     <!-- Centraliza horizontalmente -->
                     <div class="form-group">
                         <input type="submit" value="Criar Conta" class="btn btn-primary" />
                     </div>
+                </div>
             </form>
         </div>
     </div>
@@ -90,7 +108,6 @@
 
 <div class="text-center">
     <a asp-action="Index">Voltar para a Lista</a>
-    
 </div>
 
 @section Scripts {
@@ -98,4 +115,3 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
-

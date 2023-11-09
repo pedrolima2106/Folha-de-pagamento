@@ -16,37 +16,27 @@ namespace Folha01.Repositorio
             this._context = context;
         }
 
+        // Método para buscar um usuário pelo login
         public CadastroFModel BuscarPorLogin(string Login)
         {
             return _context.Lista.FirstOrDefault(x => x.LoginFuncionario.ToUpper() == Login.ToUpper());
         }
 
-        /* public LoginModel BuscarPorEmailELogin(string email, string _login)
-         {
-             return _context.LoginF.FirstOrDefault(x => x.Email.ToUpper() == email.ToUpper() && x.Login.ToUpper() == login.ToUpper());
-         }
-
-         public LoginModel BuscarPorID(int id)
-         {
-             return _context.Usuarios.FirstOrDefault(x => x.Id == id);
-         }*/
-
+        // Método para buscar todos os usuários
         public List<CadastroFModel> BuscarTodos()
         {
             return _context.Lista.ToList();
-                /*.Include(x => x.Contatos)
-                .ToList();*/
         }
 
+        // Método para adicionar um novo usuário
         public CadastroFModel Adicionar(CadastroFModel usuario)
         {
-           /* usuario.DataCadastro = DateTime.Now;
-            usuario.SetSenhaHash();*/
             _context.Lista.Add(usuario);
             _context.SaveChanges();
             return usuario;
         }
 
+        // Método para atualizar as informações de um usuário
         public CadastroFModel Atualizar(CadastroFModel usuario)
         {
             CadastroFModel usuarioDB = BuscarPorID(usuario.IdFuncionario);
@@ -59,7 +49,7 @@ namespace Folha01.Repositorio
             usuarioDB.Perfil = usuario.Perfil;
             usuarioDB.Cpf = usuario.Cpf;
             usuarioDB.Cep = usuario.Cep;
-            usuarioDB.DatadeNascimento = DateTime.Now;
+            usuarioDB.DatadeNascimento = usuario.DatadeNascimento; // Corrigido para usar a data fornecida
 
             _context.Lista.Update(usuarioDB);
             _context.SaveChanges();
@@ -67,26 +57,7 @@ namespace Folha01.Repositorio
             return usuarioDB;
         }
 
-
-       /* public UsuarioModel AlterarSenha(AlterarSenhaModel alterarSenhaModel)
-        {
-            UsuarioModel usuarioDB = BuscarPorID(alterarSenhaModel.Id);
-
-            if (usuarioDB == null) throw new Exception("Houve um erro na atualização da senha, usuário não encontrado!");
-
-            if (!usuarioDB.SenhaValida(alterarSenhaModel.SenhaAtual)) throw new Exception("Senha atual não confere!");
-
-            if (usuarioDB.SenhaValida(alterarSenhaModel.NovaSenha)) throw new Exception("Nova senha deve ser diferente da senha atual!");
-
-            usuarioDB.SetNovaSenha(alterarSenhaModel.NovaSenha);
-            usuarioDB.DataAtualizacao = DateTime.Now;
-
-            _context.Usuarios.Update(usuarioDB);
-            _context.SaveChanges();
-
-            return usuarioDB;
-        }*/
-
+        // Método para apagar um usuário com base no ID
         public bool Apagar(int id)
         {
             CadastroFModel usuarioDB = BuscarPorID(id);
@@ -99,12 +70,78 @@ namespace Folha01.Repositorio
             return true;
         }
 
+        // Método para buscar um usuário por ID (método da interface)
+        public CadastroFModel BuscarPorID(int id)
+        {
+            return _context.Lista.FirstOrDefault(x => x.IdFuncionario == id);
+        }
+
+        // Método para buscar um usuário pelo login (não implementado)
+        // Este método lança uma exceção de "Não Implementado" para indicar que a implementação está em falta.
         CadastroFModel IUsuarioRepositorio.BuscarPorLogin(string login)
         {
             throw new NotImplementedException();
         }
 
+        // Método para buscar um usuário por email e login (não implementado)
+        // Este método lança uma exceção de "Não Implementado" para indicar que a implementação está em falta.
         CadastroFModel IUsuarioRepositorio.BuscarPorEmailELogin(string email, string login)
+        {
+            throw new NotImplementedException();
+        }
+
+        // Método para buscar todos os usuários (não implementado)
+        // Este método lança uma exceção de "Não Implementado" para indicar que a implementação está em falta.
+        List<CadastroFModel> IUsuarioRepositorio.BuscarTodos()
+        {
+            throw new NotImplementedException();
+        }
+
+        // Método para buscar um usuário por ID (não implementado)
+        // Este método lança uma exceção de "Não Implementado" para indicar que a implementação está em falta.
+        CadastroFModel IUsuarioRepositorio.BuscarPorID(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        // Método para adicionar um usuário (não implementado)
+        // Este método lança uma exceção de "Não Implementado" para indicar que a implementação está em falta.
+        CadastroFModel IUsuarioRepositorio.Adicionar(CadastroFModel usuario)
+        {
+            throw new NotImplementedException();
+        }
+
+        // Método para atualizar um usuário (não implementado)
+        // Este método lança uma exceção de "Não Implementado" para indicar que a implementação está em falta.
+        CadastroFModel IUsuarioRepositorio.Atualizar(CadastroFModel usuario)
+        {
+            throw new NotImplementedException();
+        }
+
+        // Método para apagar um usuário (não implementado)
+        // Este método lança uma exceção de "Não Implementado" para indicar que a implementação está em falta.
+        bool IUsuarioRepositorio.Apagar(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        // Os métodos a seguir estão comentados, e a interface não os requer atualmente. Eles podem ser implementados no futuro, se necessário.
+        /*
+        public CadastroFModel BuscarPorEmailELogin(string email, string login)
+        {
+            throw new NotImplementedException();
+        }
+
+        public UsuarioModel AlterarSenha(AlterarSenhaModel alterarSenhaModel)
+        {
+            throw new NotImplementedException();
+        }
+        */
+
+        // Implementação dos métodos da interface que foram comentados
+        // (descomentar e implementar, se necessário)
+
+        /* CadastroFModel IUsuarioRepositorio.BuscarPorEmailELogin(string email, string login)
         {
             throw new NotImplementedException();
         }
@@ -113,82 +150,6 @@ namespace Folha01.Repositorio
         {
             throw new NotImplementedException();
         }
-
-        CadastroFModel IUsuarioRepositorio.BuscarPorID(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public CadastroFModel BuscarPorID(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        /* CadastroFModel IUsuarioRepositorio.BuscarPorLogin(string login)
-         {
-             throw new NotImplementedException();
-         }
-
-         public CadastroFModel BuscarPorEmailELogin(string email, string login)
-         {
-             throw new NotImplementedException();
-         }
-
-         List<CadastroFModel> IUsuarioRepositorio.BuscarTodos()
-         {
-             throw new NotImplementedException();
-         }
-
-
-         public CadastroFModel Adicionar(CadastroFModel usuario)
-         {
-             throw new NotImplementedException();
-         }
-
-         public CadastroFModel Atualizar(CadastroFModel usuario)
-         {
-             throw new NotImplementedException();
-         }*/
-
-        /*
-        public LoginModel Adicionar(LoginModel usuario)
-        {
-            throw new NotImplementedException();
-        }
-
-        public LoginModel Atualizar(LoginModel usuario)
-        {
-            throw new NotImplementedException();
-        }
-
-        LoginModel IUsuarioRepositorio.BuscarPorLogin(string login)
-        {
-            throw new NotImplementedException();
-        }
-
-        LoginModel IUsuarioRepositorio.BuscarPorEmailELogin(string email, string login)
-        {
-            throw new NotImplementedException();
-        }
-
-        List<LoginModel> IUsuarioRepositorio.BuscarTodos()
-        {
-            throw new NotImplementedException();
-        }
-
-        LoginModel IUsuarioRepositorio.BuscarPorID(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public LoginModel Adicionar(LoginModel usuario)
-        {
-            throw new NotImplementedException();
-        }
-
-        public LoginModel Atualizar(LoginModel usuario)
-        {
-            throw new NotImplementedException();
-        }*/
+        */
     }
 }
