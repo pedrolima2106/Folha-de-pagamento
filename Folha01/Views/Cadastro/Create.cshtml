@@ -1,5 +1,4 @@
-﻿@using Folha01.Enums;
-@model Folha01.Models.CadastroFModel
+﻿@model Folha01.Models.CadastroFModel
 
 @{
     ViewData["Title"] = "Create";
@@ -63,14 +62,9 @@
                 
                 <!-- Campo de Perfil do Funcionário -->
                 <div class="form-group">
-                    <label for="nome" class="form-label">Perfil</label>
-                    <select asp-for="Perfil" class="form-control">
-                        <option value="">Selecione</option>
-                        <option value="@PerfilEnum.Admin">Administrador</option>
-                        <option value="@PerfilEnum.FuncionarioRh">Recursos Humanos</option>
-                        <option value="@PerfilEnum.Funcionario">Funcionario</option>
-                    </select>
-                    @Html.ValidationMessageFor(x => x.Perfil)
+                    <label asp-for="Perfil" class="control-label"></label>
+                    <select asp-for="Perfil" class="form-control"></select>
+                    <span asp-validation-for="Perfil" class="text-warning"></span>
                 </div>
                 
                 <!-- Campo de Email do Funcionário -->
