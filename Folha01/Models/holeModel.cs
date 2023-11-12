@@ -4,8 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Folha01.Models
 {
-    [Table("FolhaDePagamento")]
-    public class FolhaPagamentoModel
+    [Table("Hlerites")]
+    public class holeModel
     {
         [Key]
         public int Id { get; set; }

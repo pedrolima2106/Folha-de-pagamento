@@ -2,14 +2,15 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Folha01.Models;
+using Folha01.Data;
 
 namespace Folha01.Controllers
 {
-    public class FolhaPagamentoController : Controller
+    public class holeController : Controller
     {
         private readonly Context _context;
 
-        public FolhaPagamentoController(Contex context)
+        public holeController(Context context)
         {
             _context = context;
         }
