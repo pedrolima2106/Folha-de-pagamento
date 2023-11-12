@@ -1,0 +1,35 @@
+﻿@model Folha01.Models.FolhaPagamentoModel
+
+<h2>Criar Folha de Pagamento</h2>
+
+<form asp-action="Criar">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="IdFuncionario" class="control-label">Funcionário</label>
+        <select asp-for="IdFuncionario" asp-items="@(new SelectList(ViewBag.Funcionarios, "IdFuncionario", "NomeFuncionario"))" class="form-control"></select>
+        <span asp-validation-for="IdFuncionario" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SalarioBruto" class="control-label">Salário Bruto</label>
+        <input asp-for="SalarioBruto" class="form-control" />
+        <span asp-validation-for="SalarioBruto" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Descontos" class="control-label">Descontos</label>
+        <input asp-for="Descontos" class="form-control" />
+        <span asp-validation-for="Descontos" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SalarioLiquido" class="control-label">Salário Líquido</label>
+        <input asp-for="SalarioLiquido" class="form-control" />
+        <span asp-validation-for="SalarioLiquido" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DataPagamento" class="control-label">Data de Pagamento</label>
+        <input asp-for="DataPagamento" class="form-control" />
+        <span asp-validation-for="DataPagamento" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Criar" class="btn btn-primary" />
+    </div>
+</form>

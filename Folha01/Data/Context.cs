@@ -17,5 +17,7 @@ namespace Folha01.Data
         public DbSet<FrequenciaModel> Frequencias { get; set; } // Tabela para frequências
         public DbSet<HoleriteModel> Holerite { get; set; } // Tabela para holerites
         public DbSet<LoginModel> LoginF { get; set; } // Tabela para logins de funcionários
+
+        public DbSet<FolhaPagamentoModel> folhaPagamentos { get; set; }
     }
 }

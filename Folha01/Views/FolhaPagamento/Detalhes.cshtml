@@ -1,0 +1,21 @@
+﻿@model Folha01.Models.FolhaPagamentoModel
+
+<h2>Detalhes da Folha de Pagamento</h2>
+
+<div>
+    <h4>Folha de Pagamento</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Funcionario.NomeFuncionario)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Funcionario.NomeFuncionario)
+        </dd>
+
+        <!-- Adicione outras propriedades da folha de pagamento conforme necessário -->
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Voltar para a Lista", "Index")
+</p>
