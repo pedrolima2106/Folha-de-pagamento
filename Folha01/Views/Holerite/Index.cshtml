@@ -1,113 +1,112 @@
 ﻿
 <style>
 
-    .holerite {
-        margin: 10px;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        background-color: #f9f9f9;
-        overflow: hidden; /* Adicionado para evitar que os botões fiquem fora da div */
-    }
+  .holerite {
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+      overflow: hidden; /* Adicionado para evitar que os botões fiquem fora da div */
+  }
 
-        .holerite img {
-            max-width: 100px;
-            max-height: 100px;
-            margin-right: 10px;
-            float: left;
-        }
+      .holerite img {
+          max-width: 100px;
+          max-height: 100px;
+          margin-right: 10px;
+          float: left;
+      }
 
-    .holerite-info {
-        overflow: hidden;
-    }
+  .holerite-info {
+      overflow: hidden;
+  }
 
-        .holerite-info h2 {
-            margin: 0;
-            font-size: 1.2em;
-        }
+      .holerite-info h2 {
+          margin: 0;
+          font-size: 1.2em;
+      }
 
-        .holerite-info p {
-            margin: 0;
-            font-size: 0.9em;
-        }
+      .holerite-info p {
+          margin: 0;
+          font-size: 0.9em;
+      }
 
-    .btn-group {
-        float: right;
-    }
+  .btn-group {
+      float: right;
+  }
 
-        .btn-group button {
-            margin-left: 5px;
-        }
+      .btn-group button {
+          margin-left: 5px;
+      }
 
 
-    .edit-button {
-        background-color: #45a049;
-        color: white;
-        padding: 5px 10px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 12px;
-    }
+  .edit-button {
+      background-color: #45a049;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+  }
 
-        .edit-button:hover {
-            background-color: #001eff;
-        }
+      .edit-button:hover {
+          background-color: #001eff;
+      }
 </style>
 
- 
-<div class="holerite">
-    <div class="holerite-info">
-        <img src="logo_empresa1.png" alt="Logo Empresa 1">
-        <h2>Holerite de Outubro 2023</h2>
-        <p>Funcionário: João Victor</p>
-        <p>Cargo: Analista de RH</p>
-        <p>Salário: R$ 5.573,00</p>
-    </div>
-    <div class="btn-group">
-          
-        <a class="edit-button" role="button" asp-controller="Holerite" asp-action="Holerite">Imprimir</a>
-    </div>
-</div>
 
 <div class="holerite">
-    <div class="holerite-info">
-        <img src="logo_empresa2.png" alt="Logo Empresa 2">
-        <h2>Holerite de Outubro 2023</h2>
-        <p>Funcionário: Pedro</p>
-        <p>Cargo: Desenvolvedor Front-end</p>
-        <p>Salário: R$ 7.463,00</p>
-    </div>
-    <div class="btn-group">
-       
-        <a class="edit-button" role="button" asp-controller="Holerite" asp-action="Holerite">Imprimir</a>
-    </div>
-</div>
-
-<div class="holerite">
-    <div class="holerite-info">
-        <img src="logo_empresa2.png" alt="Logo Empresa 2">
-        <h2>Holerite de Outubro 2023</h2>
-        <p>Funcionário: Josimar</p>
-        <p>Cargo: criador de documentação</p>
-        <p>Salário: R$ 5.478,00</p>
-    </div>
-    <div class="btn-group">
+  <div class="holerite-info">
+     
+      <h2>Holerite de Outubro 2023</h2>
+      <p>Funcionário: João Victor</p>
+      <p>Cargo: Analista de RH</p>
+      <p>Salário: R$ 5.573,00</p>
+  </div>
+  <div class="btn-group">
         
-        <a class="edit-button" role="button" asp-controller="Holerite" asp-action="Holerite">Imprimir</a>
-    </div>
+      <a class="edit-button" role="button" asp-controller="Holerite" asp-action="Holerite">Imprimir</a>
+  </div>
 </div>
 
 <div class="holerite">
-    <div class="holerite-info">
-        <img src="logo_empresa2.png" alt="Logo Empresa 2">
-        <h2>Holerite de Outubro 2023</h2>
-        <p>Funcionário: Eduardp</p>
-        <p>Cargo: Desenvolvedor back-end</p>
-        <p>Salário: R$ 8.382,00</p>
-    </div>
-    <div class="btn-group">
-       
-        <a class="edit-button" role="button" asp-controller="Holerite" asp-action="Holerite">Imprimir</a>
-    </div>
+  <div class="holerite-info">
+      
+      <h2>Holerite de Outubro 2023</h2>
+      <p>Funcionário: Pedro</p>
+      <p>Cargo: Desenvolvedor Front-end</p>
+      <p>Salário: R$ 7.463,00</p>
+  </div>
+  <div class="btn-group">
+     
+      <a class="edit-button" role="button" asp-controller="Holerite" asp-action="Holerite">Imprimir</a>
+  </div>
+</div>
+
+<div class="holerite">
+  <div class="holerite-info">
+      
+      <h2>Holerite de Outubro 2023</h2>
+      <p>Funcionário: Josimar</p>
+      <p>Cargo: criador de documentação</p>
+      <p>Salário: R$ 5.478,00</p>
+  </div>
+  <div class="btn-group">
+      
+      <a class="edit-button" role="button" asp-controller="Holerite" asp-action="Holerite">Imprimir</a>
+  </div>
+</div>
+
+<div class="holerite">
+  <div class="holerite-info">
+      
+      <h2>Holerite de Outubro 2023</h2>
+      <p>Funcionário: Eduardo</p>
+      <p>Cargo: Desenvolvedor back-end</p>
+      <p>Salário: R$ 8.382,00</p>
+  </div>
+  <div class="btn-group">
+     
+      <a class="edit-button" role="button" asp-controller="Holerite" asp-action="Holerite">Imprimir</a></div>
 </div>
