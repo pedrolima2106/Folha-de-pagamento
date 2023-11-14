@@ -10,7 +10,7 @@ builder.Services.AddControllersWithViews();
 
 // Configura o acesso ao banco de dados usando o Entity Framework Core.
 builder.Services.AddDbContext<Context>
-    (options => options.UseSqlServer("Data Source=NICHOLAS\\NICHOLASBANCO;Initial Catalog=Folha_de_Pagamento;Persist Security Info=True;User ID=sa;Password=1404039217nbea")); // Substitua pela string de conexão do seu banco de dados
+    (options => options.UseSqlServer("Server=localhost;Database=SysFolha;User=root;Password=0228@root;Port=3306;")); // Substitua pela string de conexão do seu banco de dados
 
 builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 

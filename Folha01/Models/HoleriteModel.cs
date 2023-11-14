@@ -7,40 +7,40 @@ namespace Folha01.Models
     [Table("Holerite")]
     public class HoleriteModel
     {
-        [Column("IDHolerite")]
+        [Column("ID")]
         [Display(Name = "IDHolerite")]
         [Key]
         public int IDHolerite { get; set; }
 
-        [Column("IdFuncionario")]
+        [Column("FUNCIONARIO")]
         [Display(Name = "IdFuncionario")]
         public int IdFuncionario { get; set; }
 
-        [Column("IdContrato")]
+        [Column("CONTRATO")]
         [Display(Name = "Codigo Contrato")]
         public int Contrato { get; set; }
 
-        [Column("IdBeneficios")]
+        [Column("BENEFICIO")]
         [Display(Name = "IdBeneficios")]
         public int IdBeneficios { get; set; }
 
-        [Column("IdFrequencia")]
+        [Column("FREQUENCIA")]
         [Display(Name = "IdFrequencia")]
         public int IdFrequencia { get; set; }
 
-        [Column("Data_Atual")]
+        [Column("DT_ATUAL")]
         [Display(Name = "Data Atual")]
         public DateTime DataAtual { get; set; }
 
-        [Column("Data_Admissao")]
+        [Column("DT_ADMISSAO")]
         [Display(Name = "Data de Admissao")]
         public DateTime DataAdmissao { get; set; }
 
-        [Column("SalarioBase")]
+        [Column("SALARIO_BASE")]
         [Display(Name = "Salario Base")]
         public double SalarioBase { get; set; }
 
-        [Column("SalarioLiquido")]
+        [Column("SALARIO_LIQUIDO")]
         [Display(Name = "Salario Liquido")]
         public double SalarioLiquido { get; set; }
     }

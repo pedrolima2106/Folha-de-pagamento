@@ -4,23 +4,23 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Folha01.Models
 {
 
-    [Table("Frequencia")]
+    [Table("FREQUENCIA")]
     public class FrequenciaModel
     {
-        [Column("IdFrequencia")]
+        [Column("ID")]
         [Display(Name = "IdFrequencia")]
         [Key]
         public int IdFrequencia { get; set; }
 
-        [Column("Data")]
+        [Column("DATA")]
         [Display(Name = "Data")]
         public double Data { get; set; }
 
-        [Column("Faltas")]
+        [Column("FALTAS")]
         [Display(Name = "Faltas")]
         public int Faltas { get; set; }
 
-        [Column("IdFuncionario")]
+        [Column("FUNCIONARIO")]
         [Display(Name = "IdFuncionario")]
         public int IdFuncionario { get; set; }
 
